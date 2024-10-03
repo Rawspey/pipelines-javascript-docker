@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rawspeypipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rawspeypipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: rawspeypipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: rawspeypipelinesjavascriptdocker 
+          image: snaarpregistry.azurecr.io/rawspeypipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
